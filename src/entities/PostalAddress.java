@@ -45,7 +45,7 @@ public class PostalAddress {
 	}
 	
 	/**
-	 * Returns a string representation of the address
+	 * Returns a string representation of the address.
 	 *
 	 * @return A string representation of the address
 	 */
@@ -55,7 +55,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Getter for {@link #houseNumber}
+	 * Getter for {@link #houseNumber}.
 	 * 
 	 * @return This address's street number
 	 */
@@ -64,7 +64,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Getter for {@link #streetName}
+	 * Getter for {@link #streetName}.
 	 * 
 	 * @return The name of the street of this address
 	 */
@@ -73,7 +73,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Getter for {@link #postalCode}
+	 * Getter for {@link #postalCode}.
 	 * 
 	 * @return This address's postal code
 	 */
@@ -82,7 +82,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Getter for {@link #cityName}
+	 * Getter for {@link #cityName}.
 	 * 
 	 * @return The name of this address's city
 	 */
@@ -91,7 +91,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Setter for {@link #houseNumber}
+	 * Setter for {@link #houseNumber}.
 	 * 
 	 * @param houseNumber The new street number to replace the current one
 	 */
@@ -100,7 +100,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Setter for {@link #streetName}
+	 * Setter for {@link #streetName}.
 	 * 
 	 * @param streetName The new street name to replace the current one
 	 */
@@ -109,7 +109,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Setter for {@link #postalCode}
+	 * Setter for {@link #postalCode}.
 	 * 
 	 * @param postalCode The new postal code to replace the current one
 	 */
@@ -118,7 +118,7 @@ public class PostalAddress {
 	}
 
 	/**
-	 * Setter for {@link #cityName}
+	 * Setter for {@link #cityName}.
 	 * 
 	 * @param cityName The new city name to replace the current one
 	 */
