@@ -12,7 +12,7 @@ public class TpBank {
 	public static void main(String[] args) {
 
 		// Instantiation d'un compte bancaire
-		Account account1 = new Account("13870352", 4943.45f);
+		Account account1 = new Account("13870352", 4_943.45f);
 		
 		// L'adresse mémoire de l'objet 'account1' est affichée
 		display(defaultToString(account1));
@@ -21,7 +21,7 @@ public class TpBank {
 		display(account1.toString());
 		
 		// Instantation d'une classe 'RateAccount' héritant de 'Account'
-		RateAccount account2 = new RateAccount("14682038", 3521.78f, 4.1f);
+		RateAccount account2 = new RateAccount("14682038", 3_521.78f, 4.1f);
 		
 		// Initialisation d'un tableau de comptes
 		Account[] accounts = {account1, account2};

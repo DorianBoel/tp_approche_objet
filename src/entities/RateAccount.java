@@ -30,11 +30,11 @@ public class RateAccount extends Account {
 	
 	@Override
 	public String toString() {
-		return String.format("%s; Taux : %s%%", super.toString(), formatNumber(payRate));
+		return String.format("%s; Taux: %s%%", super.toString(), formatNumber(payRate));
 	}
 
 	/**
-	 * Getter for {@link payRate}.
+	 * Getter for {@link #payRate}.
 	 * 
 	 * @return This account's pay rate
 	 */
@@ -43,7 +43,7 @@ public class RateAccount extends Account {
 	}
 
 	/**
-	 * Setter for {@link payRate}.
+	 * Setter for {@link #payRate}.
 	 * 
 	 * @param payRate The new pay rate to replace the current one
 	 */

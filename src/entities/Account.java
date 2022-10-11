@@ -39,7 +39,7 @@ public class Account {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Compte n°%s; Solde : %s", number, formatCurrency(balance));
+		return String.format("Compte n°%s; Solde: %s", number, formatCurrency(balance));
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class Account {
 	}
 
 	/**
-	 * Setter for {@link number}.
+	 * Setter for {@link #number}.
 	 * 
 	 * @param number The new account number to replace the current one
 	 */
@@ -70,7 +70,7 @@ public class Account {
 	}
 
 	/**
-	 * Setter for {@link balance}.
+	 * Setter for {@link #balance}.
 	 * 
 	 * @param balance The new account balance to replace the current one
 	 */
