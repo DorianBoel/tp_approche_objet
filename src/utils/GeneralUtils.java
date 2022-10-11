@@ -1,6 +1,9 @@
 package utils;
 
 import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 /**
  * Non-instantiable class containing various utility methods
@@ -71,6 +74,18 @@ public final class GeneralUtils {
 	 */
 	public static String formatNumber(double number) {
 		return NumberFormat.getNumberInstance().format(number);
+	}
+	
+	/**
+	 * Returns a formatted {@code String} of a
+	 * date, based on the current locale format.
+	 * 
+	 * @param date The date to be formatted
+	 * @return The formatted date
+	 */
+	public static String formatDate(LocalDate date) {
+		//return DateFormat.getInstance().format(date);
+		return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
 	}
 	
 }

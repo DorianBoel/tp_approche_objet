@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 import enums.TransactionType;
 
 /**
@@ -16,7 +18,7 @@ public class Debit extends Transaction {
 	 * @param date The date of the debit
 	 * @param amount The amount of currency withdrawn
 	 */
-	public Debit(String date, float amount) {
+	public Debit(LocalDate date, float amount) {
 		super(date, amount);
 		type = TransactionType.DEBIT;
 	}

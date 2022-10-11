@@ -1,6 +1,9 @@
 package entities;
 
 import static utils.GeneralUtils.formatCurrency;
+import static utils.GeneralUtils.formatDate;
+
+import java.time.LocalDate;
 
 import enums.TransactionType;
 
@@ -15,7 +18,7 @@ public abstract class Transaction {
 	/**
 	 * The date at which the transaction was carried out.
 	 */
-	protected String date;
+	protected LocalDate date;
 	
 	/**
 	 * The amount of currency transferred during the transaction.
@@ -33,7 +36,7 @@ public abstract class Transaction {
 	 * @param date The date of the transaction
 	 * @param amount The amount transferred
 	 */
-	public Transaction(String date, float amount) {
+	public Transaction(LocalDate date, float amount) {
 		this.date = date;
 		this.amount = amount;
 	}
@@ -53,7 +56,7 @@ public abstract class Transaction {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s %s; Montant: %s", date, type.toString(), formatCurrency(amount));
+		return String.format("%s %s; Montant: %s", formatDate(date), type.getLabel(), formatCurrency(amount));
 	}
 
 	/**
@@ -61,7 +64,7 @@ public abstract class Transaction {
 	 * 
 	 * @return The date at which this transaction was carried out
 	 */
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
@@ -88,7 +91,7 @@ public abstract class Transaction {
 	 * 
 	 * @param date The new date to replace the current one
 	 */
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 

@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 import enums.TransactionType;
 
 /**
@@ -16,7 +18,7 @@ public class Credit extends Transaction {
 	 * @param date The date of the credit
 	 * @param amount The amount of currency added
 	 */
-	public Credit(String date, float amount) {
+	public Credit(LocalDate date, float amount) {
 		super(date, amount);
 		type = TransactionType.CREDIT;
 	}

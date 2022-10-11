@@ -4,6 +4,8 @@ import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
 import static utils.GeneralUtils.formatCurrency;
 
+import java.time.LocalDate;
+
 import entities.Credit;
 import entities.Debit;
 import entities.Transaction;
@@ -14,10 +16,10 @@ public class TpTransaction {
 
 		// On initialise une tableau de plusieurs transactions
 		Transaction[] transactions = {
-			new Credit("11/06/2021", 3_000f),
-			new Debit("02/08/2021", 1_899.99f),
-			new Credit("22/12/2021", 200f),
-			new Debit("09/02/2022", 989.99f)
+			new Credit(LocalDate.of(2021, 6, 11), 3_000f),
+			new Debit(LocalDate.of(2021, 8, 2), 1_899.99f),
+			new Credit(LocalDate.of(2021, 12, 22), 200f),
+			new Debit(LocalDate.of(2022, 2, 9), 989.99f)
 		};
 		
 		// Affichage du contenu du tableau
