@@ -1,5 +1,7 @@
 package utils;
 
+import java.text.NumberFormat;
+
 /**
  * Non-instantiable class containing various utility methods
  * for easier reusability.
@@ -26,6 +28,19 @@ public final class GeneralUtils {
 	}
 	
 	/**
+	 * Prints each value in an array, then prints an empty new line at the end.
+	 * 
+	 * @param <T> The type of values in the array
+	 * @param array The array from which to display values
+	 */
+	public static <T> void displayInArray(T[] array) {
+		for (T o : array) {
+			System.out.println(o);
+		}
+		System.out.println();
+	}
+	
+	/**
 	 * Returns a {@code String} representation of an object as
 	 * though its {@link Object#toString toString} method had not been overridden.
 	 * 
@@ -34,6 +49,28 @@ public final class GeneralUtils {
 	 */
 	public static String defaultToString(Object o) {
 		return o.getClass().getName() + '@' + Integer.toHexString(o.hashCode());
+	}
+	
+	/**
+	 * Returns a formatted {@code String} of a currency
+	 * value, based on the current locale format.
+	 * 
+	 * @param currency The currency value to be formatted
+	 * @return The formatted currency value
+	 */
+	public static String formatCurrency(double currency) {
+		return NumberFormat.getCurrencyInstance().format(currency);
+	}
+	
+	/**
+	 * Returns a formatted {@code String} of a
+	 * number, based on the current locale format.
+	 * 
+	 * @param number The number to be formatted
+	 * @return The formatted number
+	 */
+	public static String formatNumber(double number) {
+		return NumberFormat.getNumberInstance().format(number);
 	}
 	
 }

@@ -1,5 +1,7 @@
 package entities;
 
+import static utils.GeneralUtils.formatCurrency;
+
 /**
  * Represents a bank account.
  *
@@ -10,12 +12,12 @@ public class Account {
 	/**
 	 * The bank account's unique identifier.
 	 */
-	private String number;
+	protected String number;
 	
 	/**
 	 * The account's current balance;
 	 */
-	private float balance;
+	protected float balance;
 
 	/**
 	 * Constructor for {@link Account}.
@@ -26,14 +28,18 @@ public class Account {
 	 * @param balance The account's starting balance
 	 */
 	public Account(String number, float balance) {
-		super();
 		this.number = number;
 		this.balance = balance;
 	}
 	
+	/**
+	 * Returns a string representation of the account.
+	 *
+	 * @return A string representation of the account
+	 */
 	@Override
 	public String toString() {
-		return String.format("Compte n°%s, Solde: %f€", number, balance);
+		return String.format("Compte n°%s; Solde : %s", number, formatCurrency(balance));
 	}
 
 	/**
