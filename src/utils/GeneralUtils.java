@@ -25,4 +25,15 @@ public final class GeneralUtils {
 		System.out.println();
 	}
 	
+	/**
+	 * Returns a {@code String} representation of an object as
+	 * though its {@link Object#toString toString} method had not been overridden.
+	 * 
+	 * @param o The object to convert to {@code String}
+	 * @return The default string representation of the object
+	 */
+	public static String defaultToString(Object o) {
+		return o.getClass().getName() + '@' + Integer.toHexString(o.hashCode());
+	}
+	
 }

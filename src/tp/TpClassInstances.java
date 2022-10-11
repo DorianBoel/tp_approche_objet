@@ -1,8 +1,9 @@
 package tp;
 
+import static utils.GeneralUtils.display;
+
 import entities.Person;
 import entities.PostalAddress;
-import static utils.GeneralUtils.*;
 
 public class TpClassInstances {
 
@@ -12,8 +13,8 @@ public class TpClassInstances {
 		PostalAddress address1 = new PostalAddress("5", "avenue Ferdinand de Lesseps", "38000", "Grenoble");
 		PostalAddress address2 = new PostalAddress("71", "rue Pierre de Coubertin", "31100", "Toulouse");
 		
-		display(address1.toString());
-		display(address2.toString());
+		display(address1);
+		display(address2);
 		
 		// On instantie deux nouvelles personnes avec les adresses existantes
 		Person person1 = new Person("Pucepré", "Jean-Paul", address1);
