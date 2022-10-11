@@ -87,4 +87,21 @@ public final class GeneralUtils {
 		return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
 	}
 	
+	/**
+	 * Adds a given {@code double} value to the end of an array,
+	 * increasing its length by one.
+	 * 
+	 * @param value A {@code double} value to be added to the array
+	 * @param array An array to add the new value to
+	 * @return The array with the newly added value at the end
+	 */
+	public static double[] pushToArray(double value, double[] array) {
+		double[] newArr = new double[array.length + 1];
+		for (int i = 0; i < array.length; i++) {
+			newArr[i] = array[i];
+		}
+		newArr[newArr.length - 1] = value;
+		return newArr;
+	}
+	
 }
