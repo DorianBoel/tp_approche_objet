@@ -84,7 +84,6 @@ public final class GeneralUtils {
 	 * @return The formatted date
 	 */
 	public static String formatDate(LocalDate date) {
-		//return DateFormat.getInstance().format(date);
 		return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
 	}
 	

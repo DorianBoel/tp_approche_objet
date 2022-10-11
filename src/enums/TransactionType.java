@@ -19,7 +19,7 @@ public enum TransactionType {
 	DEBIT("débit");
 	
 	/**
-	 * The label identifying a transaction type
+	 * The label identifying a transaction type.
 	 */
 	private String label;
 	
