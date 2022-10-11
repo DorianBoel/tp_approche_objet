@@ -65,14 +65,8 @@ public class Person {
 	 */
 	@Override
 	public String toString() {
-		return String.format(
-			"""
-			%s %s
-			Address : %s""",
-			lastName,
-			firstName,
-			address.toString()
-		);
+		String addressVal = address != null ? "\nAddress :" + address.toString() : "";
+		return String.format("%s %s%s", lastName, firstName, addressVal);
 	}
 
 	/**

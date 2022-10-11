@@ -16,7 +16,7 @@ public final class GeneralUtils {
 	}
 	
 	/**
-	 * Prints a message in the console then prints an empty new line.
+	 * Prints a message in the console followed by an empty new line.
 	 * 
 	 * @param message The message to display
 	 */
