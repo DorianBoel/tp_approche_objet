@@ -24,7 +24,7 @@ public class TpOperations {
 		};
 		
 		for (double[] numArray : numTable) {
-			// Instantiation d'une nouvelle instance de la classe 'AverageCalculator'
+			// Instanciation d'une nouvelle instance de la classe 'AverageCalculator'
 			AverageCalculator averageCalculator = new AverageCalculator();
 			// On fait passer le tableau dans la classe pour qu'il soit traité
 			averageCalculator.push(numArray);

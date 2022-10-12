@@ -2,6 +2,11 @@ package utils;
 
 import enums.ArithmeticOperationType;
 
+/**
+ * Utility class used to perform basic arithmetic operations.
+ *
+ * @author DorianBoel
+ */
 public final class Operations {
 
 	/**

@@ -11,7 +11,7 @@ public class TpTheater {
 
 	public static void main(String[] args) {
 		
-		// Instantiation d'un nouveau théâtre
+		// Instanciation d'un nouveau théâtre
 		Theater theater1 = new Theater("Théâtre Molière", 500);
 		
 		// On définie combien coûte une place

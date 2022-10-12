@@ -5,7 +5,7 @@ package entities;
  * 
  * @author DorianBoel
  */
-public class Circle {
+public class Circle extends Shape {
 
 	/**
 	 * The radius of the circle.
@@ -30,6 +30,7 @@ public class Circle {
 	 * 
 	 * @return This circle's perimeter
 	 */
+	@Override
 	public double getPerimeter() {
 		return radius * Math.PI * 2;
 	}
@@ -40,6 +41,7 @@ public class Circle {
 	 * 
 	 * @return This circle's surface area
 	 */
+	@Override
 	public double getSurface() {
 		return Math.PI * Math.pow(this.radius, 2.0);
 	}
