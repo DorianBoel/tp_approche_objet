@@ -1,8 +1,8 @@
 package tp;
 
-import static utils.GeneralUtils.toStringDefault;
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
+import static utils.GeneralUtils.toStringDefault;
 
 import entities.Account;
 import entities.RateAccount;

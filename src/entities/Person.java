@@ -10,17 +10,17 @@ public class Person {
 	/**
 	 * The person's last name.
 	 */
-	private String lastName;
+	protected String lastName;
 	
 	/**
 	 * The person's first name.
 	 */
-	private String firstName;
+	protected String firstName;
 	
 	/**
 	 * The person's postal address.
 	 */
-	private PostalAddress address;
+	protected PostalAddress address;
 	
 	/**
 	 * Constructor for {@link Person}.
