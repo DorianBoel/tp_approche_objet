@@ -29,20 +29,11 @@ public final class Operations {
 	public static double calculate(double x, double y, ArithmeticOperationType operation) throws UnsupportedOperationException {
 		double result;
 		switch(operation) {
-			case ADDITION :
-				result = x + y;
-				break;
-			case SUBSTRACTION :
-				result = x - y;
-				break;
-			case MULTIPLICATION :
-				result = x * y;
-				break;
-			case DIVISION :
-				result = x / y;
-				break;
-			default:
-				throw new UnsupportedOperationException();
+			case ADDITION -> result = x + y;
+			case SUBSTRACTION -> result = x - y;
+			case MULTIPLICATION -> result = x * y;
+			case DIVISION -> result = x / y;
+			default -> throw new UnsupportedOperationException();
 		}
 		return result;
 	}

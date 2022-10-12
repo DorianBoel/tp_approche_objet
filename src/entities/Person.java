@@ -59,9 +59,9 @@ public class Person {
 	}
 	
 	/**
-	 * Returns a string representation of the person.
+	 * Returns a string representation of this person.
 	 *
-	 * @return A string representation of the person
+	 * @return A string representation of this person
 	 */
 	@Override
 	public String toString() {
