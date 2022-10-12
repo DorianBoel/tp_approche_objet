@@ -1,6 +1,6 @@
 package tp;
 
-import static utils.GeneralUtils.defaultToString;
+import static utils.GeneralUtils.toStringDefault;
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
 
@@ -15,7 +15,7 @@ public class TpBank {
 		Account account1 = new Account("13870352", 4_943.45f);
 		
 		// L'adresse mémoire de l'objet 'account1' est affichée
-		display(defaultToString(account1));
+		display(toStringDefault(account1));
 		
 		// On affiche les infos du compte avec une méthode 'toString' redéfinie
 		display(account1.toString());

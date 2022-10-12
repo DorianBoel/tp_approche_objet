@@ -31,6 +31,16 @@ public final class GeneralUtils {
 	}
 	
 	/**
+	 * Prints a message in the console as an error followed by an empty new line.
+	 * 
+	 * @param message The error message to display
+	 */
+	public static void displayErr(Object message) {
+		System.err.println(message);
+		System.out.println();
+	}
+	
+	/**
 	 * Prints each value in an array, then prints an empty new line at the end.
 	 * 
 	 * @param <T> The type of values in the array
@@ -50,7 +60,7 @@ public final class GeneralUtils {
 	 * @param o The object to convert to {@code String}
 	 * @return The default string representation of the object
 	 */
-	public static String defaultToString(Object o) {
+	public static String toStringDefault(Object o) {
 		return o.getClass().getName() + '@' + Integer.toHexString(o.hashCode());
 	}
 	
@@ -102,6 +112,27 @@ public final class GeneralUtils {
 		}
 		newArr[newArr.length - 1] = value;
 		return newArr;
+	}
+	
+	/**
+	 * Returns a random integer between 0 and the given maximum value.
+	 * 
+	 * @param max The maximum value a generated number can have
+	 * @return A randomly generated integer
+	 */
+	public static int randomInt(int max) {
+		return (int) Math.floor(Math.random() * (max + 1));
+	}
+	
+	/**
+	 * Returns a random integer two given values.
+	 * 
+	 * @param min The minimum value a generated number can have
+	 * @param max The maximum value a generated number can have
+	 * @return A randomly generated integer
+	 */
+	public static int randomInt(int min, int max) {
+		return (int) Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 	
 }
