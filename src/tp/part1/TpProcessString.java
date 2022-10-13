@@ -1,4 +1,4 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;

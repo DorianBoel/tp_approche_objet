@@ -1,4 +1,4 @@
-package entities;
+package entities.contributors;
 
 /**
  * Represents a freelance contributor with no fixed salary.

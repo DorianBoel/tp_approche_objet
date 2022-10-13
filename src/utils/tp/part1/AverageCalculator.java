@@ -1,4 +1,4 @@
-package utils;
+package utils.tp.part1;
 
 import static utils.GeneralUtils.pushToArray;
 

@@ -1,4 +1,4 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
@@ -6,9 +6,9 @@ import static utils.GeneralUtils.formatCurrency;
 
 import java.time.LocalDate;
 
-import entities.Credit;
-import entities.Debit;
-import entities.Transaction;
+import entities.bank.Credit;
+import entities.bank.Debit;
+import entities.bank.Transaction;
 
 public class TpTransaction {
 

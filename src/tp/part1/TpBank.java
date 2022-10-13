@@ -1,11 +1,11 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
 import static utils.GeneralUtils.toStringDefault;
 
-import entities.Account;
-import entities.RateAccount;
+import entities.bank.Account;
+import entities.bank.RateAccount;
 
 public class TpBank {
 	

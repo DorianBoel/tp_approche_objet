@@ -1,4 +1,4 @@
-package entities;
+package entities.house;
 
 import enums.RoomType;
 

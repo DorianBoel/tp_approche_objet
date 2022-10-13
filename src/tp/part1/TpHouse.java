@@ -1,10 +1,10 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayErr;
 
-import entities.House;
-import entities.Room;
+import entities.house.House;
+import entities.house.Room;
 import enums.RoomType;
 
 public class TpHouse {

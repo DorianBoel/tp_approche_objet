@@ -1,9 +1,9 @@
-package utils;
+package utils.tp.part1;
 
-import entities.Circle;
+import entities.shapes.Circle;
 
 /**
- * Non instantiable class used to instantiate {@link entities.Circle Circles}.
+ * Non instantiable class used to instantiate {@link entities.shapes.Circle Circles}.
  * 
  * @author DorianBoel
  */

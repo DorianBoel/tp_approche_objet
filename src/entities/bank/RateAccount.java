@@ -1,4 +1,4 @@
-package entities;
+package entities.bank;
 
 import static utils.GeneralUtils.formatNumber;
 

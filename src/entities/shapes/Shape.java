@@ -1,4 +1,4 @@
-package entities;
+package entities.shapes;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.formatNumber;

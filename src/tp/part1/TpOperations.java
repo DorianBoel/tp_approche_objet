@@ -1,11 +1,11 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayErr;
 
 import enums.ArithmeticOperationType;
-import utils.AverageCalculator;
-import utils.Operations;
+import utils.tp.part1.AverageCalculator;
+import utils.tp.part1.Operations;
 
 public class TpOperations {
 

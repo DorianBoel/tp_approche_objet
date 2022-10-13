@@ -1,12 +1,12 @@
-package tp;
+package tp.part1;
 
 import static utils.GeneralUtils.display;
 
-import entities.Circle;
-import entities.Rectangle;
-import entities.Shape;
-import entities.Square;
-import utils.CircleFactory;
+import entities.shapes.Circle;
+import entities.shapes.Rectangle;
+import entities.shapes.Shape;
+import entities.shapes.Square;
+import utils.tp.part1.CircleFactory;
 
 public class TpShapes {
 	

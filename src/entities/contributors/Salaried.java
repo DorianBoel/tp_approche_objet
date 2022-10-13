@@ -1,4 +1,4 @@
-package entities;
+package entities.contributors;
 
 /**
  * Represents a contributor with a fixed monthly salary.

@@ -1,8 +1,8 @@
-package tp;
+package tp.part1;
 
-import entities.Contributor;
-import entities.Freelance;
-import entities.Salaried;
+import entities.contributors.Contributor;
+import entities.contributors.Freelance;
+import entities.contributors.Salaried;
 
 public class TpContributor {
 	

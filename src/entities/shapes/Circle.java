@@ -1,4 +1,4 @@
-package entities;
+package entities.shapes;
 
 /**
  * Represents a geometric circle shape.
