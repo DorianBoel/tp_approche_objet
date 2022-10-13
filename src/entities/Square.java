@@ -12,10 +12,10 @@ public class Square extends Rectangle {
 	 * 
 	 * Creates a new square with the new dimensions.
 	 * 
-	 * @param length The length of one of the square's sides
+	 * @param side The length of one of the square's sides
 	 */
-	public Square(double length) {
-		super(length, length);
+	public Square(double side) {
+		super(side, side);
 	}
 
 }

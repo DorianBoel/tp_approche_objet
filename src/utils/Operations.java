@@ -26,14 +26,14 @@ public final class Operations {
 	 * @return The result of the operation
 	 * @throws UnsupportedOperationException If the given operation type is not recognized
 	 */
-	public static double calculate(double x, double y, ArithmeticOperationType operation) throws UnsupportedOperationException {
+	public static double calculate(double x, double y, ArithmeticOperationType operation) throws Exception {
 		double result;
 		switch(operation) {
 			case ADDITION -> result = x + y;
 			case SUBSTRACTION -> result = x - y;
 			case MULTIPLICATION -> result = x * y;
 			case DIVISION -> result = x / y;
-			default -> throw new UnsupportedOperationException();
+			default -> throw new Exception("Unknow operation");
 		}
 		return result;
 	}

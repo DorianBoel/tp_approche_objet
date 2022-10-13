@@ -1,5 +1,6 @@
 package utils;
 
+import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -107,6 +108,25 @@ public final class GeneralUtils {
 	 */
 	public static double[] pushToArray(double value, double[] array) {
 		double[] newArr = new double[array.length + 1];
+		for (int i = 0; i < array.length; i++) {
+			newArr[i] = array[i];
+		}
+		newArr[newArr.length - 1] = value;
+		return newArr;
+	}
+	
+	/**
+	 * Adds a given value to the end of an array of objects,
+	 * increasing its length by one.
+	 * 
+	 * @param <T> The type of objects in the array
+	 * @param value An object to be added to the array
+	 * @param array An array to add the new value to
+	 * @return The array with the newly added value at the end
+	 */
+	public static <T extends Object> T[] pushToArray(T value, T[] array) {
+		@SuppressWarnings("unchecked")
+		T[] newArr = (T[]) Array.newInstance(array.getClass().getComponentType(), array.length + 1);
 		for (int i = 0; i < array.length; i++) {
 			newArr[i] = array[i];
 		}

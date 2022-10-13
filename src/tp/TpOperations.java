@@ -1,6 +1,7 @@
 package tp;
 
 import static utils.GeneralUtils.display;
+import static utils.GeneralUtils.displayErr;
 
 import enums.ArithmeticOperationType;
 import utils.AverageCalculator;
@@ -14,8 +15,13 @@ public class TpOperations {
 		double a = 50, b = .5;
 	
 		for (ArithmeticOperationType op : ArithmeticOperationType.values()) {
-			display(op.toString() + ": " + Operations.calculate(a, b, op));
+			try {
+				display(op.toString() + ": " + Operations.calculate(a, b, op));
+			} catch (Exception err) {
+				displayErr(err);
+			}
 		}
+		
 		
 		// Test de calcul moyenne sur deux tableaux
 		double[][] numTable = {

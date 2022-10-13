@@ -37,7 +37,7 @@ public class Circle extends Shape {
 	
 	/**
 	 * Calculates this circle's surface area using the
-	 * <i>radius^2 * pi</i> formula.
+	 * <i>radius² * pi</i> formula.
 	 * 
 	 * @return This circle's surface area
 	 */
