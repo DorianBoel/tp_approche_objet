@@ -5,6 +5,8 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Collection;
+import java.util.Objects;
 
 /**
  * Non-instantiable class containing various utility methods
@@ -12,13 +14,13 @@ import java.time.format.FormatStyle;
  * 
  * @author DorianBoel
  */
-public final class GeneralUtils {
+public final class GeneralUtils extends NonInstantiable {
 
 	/**
 	 * This class should not be instantiated.
 	 */
 	private GeneralUtils() {
-		throw new UnsupportedOperationException("The class " + this.getClass().getSimpleName() + "cannot be instantiated.");
+		super();
 	}
 	
 	/**
@@ -52,6 +54,16 @@ public final class GeneralUtils {
 			System.out.println(o);
 		}
 		System.out.println();
+	}
+	
+	/**
+	 * Prints each value in a {@link Collection} object, then prints an empty new line at the end.
+	 * 
+	 * @param <T> The type of values in the collection
+	 * @param collection The collection from which to display values
+	 */
+	public static <T> void displayInCollection(Collection<T> collection) {
+		displayInArray(Objects.requireNonNull(collection).toArray());
 	}
 	
 	/**
@@ -124,8 +136,8 @@ public final class GeneralUtils {
 	 * @param array An array to add the new value to
 	 * @return The array with the newly added value at the end
 	 */
+	@SuppressWarnings("unchecked")
 	public static <T extends Object> T[] pushToArray(T value, T[] array) {
-		@SuppressWarnings("unchecked")
 		T[] newArr = (T[]) Array.newInstance(array.getClass().getComponentType(), array.length + 1);
 		for (int i = 0; i < array.length; i++) {
 			newArr[i] = array[i];

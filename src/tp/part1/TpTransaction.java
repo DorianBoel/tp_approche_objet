@@ -4,11 +4,13 @@ import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
 import static utils.GeneralUtils.formatCurrency;
 
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 
 import entities.bank.Credit;
 import entities.bank.Debit;
 import entities.bank.Transaction;
+import enums.TransactionType;
 
 public class TpTransaction {
 
@@ -35,6 +37,15 @@ public class TpTransaction {
 		
 		// Somme totale à la fin des transactions
 		display(formatCurrency(total));
+		
+		try {
+			Transaction tr = TransactionType.CREDIT.getConstructor().newInstance(LocalDate.of(2021, 6, 11), 3_000f);
+			display(tr);
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException err) {
+			err.printStackTrace();
+		}
+		
 		
 	}
 

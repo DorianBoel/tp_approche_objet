@@ -1,5 +1,7 @@
 package enums;
 
+import entities.house.Room;
+
 /**
  * Enumeration of existing types used to identify
  * the nature of a {@link Room}.
@@ -31,6 +33,6 @@ public enum RoomType {
 	/**
 	 * Represents a water closet within a house.
 	 */
-	WATER_CLOSET
+	WATER_CLOSET;
 	
 }

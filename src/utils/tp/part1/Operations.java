@@ -1,20 +1,14 @@
 package utils.tp.part1;
 
 import enums.ArithmeticOperationType;
+import utils.NonInstantiable;
 
 /**
  * Utility class used to perform basic arithmetic operations.
  *
  * @author DorianBoel
  */
-public final class Operations {
-
-	/**
-	 * This class should not be instantiated.
-	 */
-	private Operations() {
-		throw new UnsupportedOperationException("The class " + this.getClass().getSimpleName() + "cannot be instantiated.");
-	}
+public final class Operations extends NonInstantiable {
 	
 	/**
 	 * Calculates an arithmetic operation of a given type between

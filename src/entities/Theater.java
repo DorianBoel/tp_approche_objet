@@ -65,7 +65,11 @@ public class Theater {
 	 * number of remaining available seats.
 	 */
 	public void displayRegistrationInfo() {
-		display(String.format("Personnes inscrites: %d, places restantes: %d", registeredCustomerCount, capacity - registeredCustomerCount));
+		display(String.format(
+			"Personnes inscrites: %d, places restantes: %d",
+			registeredCustomerCount,
+			capacity - registeredCustomerCount
+		));
 	}
 
 	/**
@@ -87,7 +91,7 @@ public class Theater {
 	}
 
 	/**
-	 * Getter for {@link #registeredCustomers}.
+	 * Getter for {@link #registeredCustomerCount}.
 	 * 
 	 * @return The current amount of registered customers
 	 */

@@ -1,5 +1,12 @@
 package enums;
 
+import java.lang.reflect.Constructor;
+import java.time.LocalDate;
+
+import entities.bank.Credit;
+import entities.bank.Debit;
+import entities.bank.Transaction;
+
 /**
  * Enumeration listing the existing types of 
  * transactions for a bank account.
@@ -9,27 +16,32 @@ package enums;
 public enum TransactionType {
 
 	/**
-	 * The type of a {@link entities.Credit Credit} transaction.
+	 * The type of a {@link entities.bank.Credit Credit} transaction.
 	 */
-	CREDIT("crédit"),
+	CREDIT("crédit", Credit.class),
 	
 	/**
-	 * The type of a {@link entities.Debit Debit} transaction.
+	 * The type of a {@link entities.bank.Debit Debit} transaction.
 	 */
-	DEBIT("débit");
+	DEBIT("débit", Debit.class);
 	
 	/**
 	 * The label identifying a transaction type.
 	 */
 	private String label;
 	
+	private Class<? extends Transaction> c;
+	
 	/**
 	 * Enum constructor for {@link TransactionType}.
 	 * 
 	 * @param label The transaction type's label
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
 	 */
-	private TransactionType(String label) {
+	private TransactionType(String label, Class<? extends Transaction> cl) {
 		this.label = label;
+		this.c = cl;
 	}
 
 	/**
@@ -39,6 +51,10 @@ public enum TransactionType {
 	 */
 	public String getLabel() {
 		return label;
+	}
+	
+	public Constructor<? extends Transaction> getConstructor() throws NoSuchMethodException, SecurityException {
+		return c.getConstructor(LocalDate.class, float.class);
 	}
 	
 }

@@ -1,20 +1,14 @@
 package utils.tp.part1;
 
 import entities.shapes.Circle;
+import utils.NonInstantiable;
 
 /**
  * Non instantiable class used to instantiate {@link entities.shapes.Circle Circles}.
  * 
  * @author DorianBoel
  */
-public final class CircleFactory {
-
-	/**
-	 * This class should not be instantiated.
-	 */
-	private CircleFactory() {
-		throw new UnsupportedOperationException("The class " + this.getClass().getSimpleName() + "cannot be instantiated.");
-	}
+public final class CircleFactory extends NonInstantiable {
 	
 	/**
 	 * Creates a new {@link Circle} object with the given radius.

@@ -20,7 +20,7 @@ public class TpTheater {
 		// On inscrit un certain nombre de personnes jusqu'à ce que la capacité max soit atteinte
 		try {
 			while (true) {
-				theater1.register(randomInt(1, 15), price);
+				theater1.register(randomInt(10, 25), price);
 				theater1.displayRegistrationInfo();
 			}
 		} catch (Exception err) {
