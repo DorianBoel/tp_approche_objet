@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class TpLists {
+public class TpLists1 {
 
 	public static void main(String[] args) {
 		

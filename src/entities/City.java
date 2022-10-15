@@ -15,7 +15,7 @@ public class City {
 	private String name;
 	
 	/**
-	 * The total number of inhabitants.
+	 * The total number of inhabitants in the city.
 	 */
 	private int population;
 
