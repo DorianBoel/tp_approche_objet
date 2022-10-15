@@ -5,6 +5,7 @@ import static utils.GeneralUtils.displayInCollection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class TpLists {
@@ -70,14 +71,52 @@ public class TpLists {
 		
 		// On convertit chaque nombres négatif de la liste en son opposé
 		for (int i = 0; i < integerList2.size(); i++) {
-			int atIdx = integerList2.get(i);
-			if (atIdx < 0) {
-				integerList2.set(i, -atIdx);
+			int intAtIdx = integerList2.get(i);
+			if (intAtIdx < 0) {
+				integerList2.set(i, -intAtIdx);
 			}
 		}
 		
 		// Affichage de la liste résultante
 		displayInCollection(integerList2);
+		
+		// Initialisation d'une nouvelle liste de chaînes de caractères
+		List<String> strList = new ArrayList<>(
+			Arrays.asList(
+				"Nice",
+				"Carcassonne",
+				"Narbonne",
+				"Lyon",
+				"Foix",
+				"Pau",
+				"Marseille",
+				"Tarbes"
+			)
+		);
+		
+		// On recherche parmi la liste la chaîne la plus longue
+		String longestStr = "";
+		for (String str : strList) {
+			if (str.length() > longestStr.length()) {
+				longestStr = str;
+			}
+		}
+		
+		// On met toutes les valeurs de la liste en majuscules
+		for (int i = 0; i < strList.size(); i++) {
+			strList.set(i, strList.get(i).toUpperCase());
+		}
+		
+		// On supprime les valeurs commençant par la lettre N
+		// en utilisant un Iterator
+		Iterator<String> iterator = strList.iterator();
+		
+		while (iterator.hasNext()) {
+			if (iterator.next().charAt(0) == 'N') {
+				iterator.remove();
+			}
+		}
+		displayInCollection(strList);
 		
 	}
 	
