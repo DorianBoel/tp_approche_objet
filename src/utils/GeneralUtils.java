@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -64,6 +65,20 @@ public final class GeneralUtils extends NonInstantiable {
 	 */
 	public static <T> void displayInCollection(Collection<T> collection) {
 		displayInArray(Objects.requireNonNull(collection).toArray());
+	}
+	
+	/**
+	 * Prints each key-value pair in a {@link Map}, then prints an empty new line at the end.
+	 * 
+	 * @param <K> The type of keys in the map
+	 * @param <V> The type of values in the map
+	 * @param map The map from which to display pairs
+	 */
+	public static <K, V> void displayInMap(Map<K, V> map) {
+		for (K key : map.keySet()) {
+			System.out.println(String.format("%s : %s", String.valueOf(key), String.valueOf(map.get(key))));
+		}
+		System.out.println();
 	}
 	
 	/**
