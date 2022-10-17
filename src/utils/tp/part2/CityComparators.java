@@ -11,7 +11,7 @@ import utils.NonInstantiable;
  *
  * @author DorianBoel
  */
-public class CityComparators extends NonInstantiable {
+public final class CityComparators extends NonInstantiable {
 
 	/**
 	 * A comparator which compares a

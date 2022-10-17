@@ -12,12 +12,12 @@ public class City implements Comparable<City>{
 	/**
 	 * The city's official full name.
 	 */
-	private String name;
+	protected String name;
 	
 	/**
 	 * The total number of inhabitants in the city.
 	 */
-	private int population;
+	protected int population;
 
 	/**
 	 * Constructor for {@link City}.
