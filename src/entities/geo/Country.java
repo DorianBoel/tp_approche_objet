@@ -1,4 +1,4 @@
-package entities;
+package entities.geo;
 
 import static utils.GeneralUtils.formatNumber;
 

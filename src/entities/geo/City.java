@@ -1,4 +1,4 @@
-package entities;
+package entities.geo;
 
 import static utils.GeneralUtils.formatNumber;
 
@@ -7,7 +7,7 @@ import static utils.GeneralUtils.formatNumber;
  * 
  * @author DorianBoel
  */
-public class City {
+public class City implements Comparable<City>{
 	
 	/**
 	 * The city's official full name.
@@ -30,6 +30,11 @@ public class City {
 	public City(String name, int population) {
 		this.name = name;
 		this.population = population;
+	}
+	
+	@Override
+	public int compareTo(City city) {
+		return city.getPopulation() - population;
 	}
 	
 	@Override

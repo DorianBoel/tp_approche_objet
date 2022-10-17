@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import entities.City;
+import entities.geo.City;
 
 public class TpLists2 {
 
@@ -15,14 +15,14 @@ public class TpLists2 {
 		
 		// Initialisation d'une liste contenant plusieurs instances de ville
 		List<City> cities = new ArrayList<>(Arrays.asList(
-			new City("Nice", 343000),
-			new City("Carcassonne", 47800),
-			new City("Narbonne", 53400),
-			new City("Lyon", 484000),
-			new City("Foix", 9700),
-			new City("Pau", 77200),
-			new City("Marseille", 850700),
-			new City("Tarbes", 40600)
+			new City("Nice", 343_000),
+			new City("Carcassonne", 47_800),
+			new City("Narbonne", 53_400),
+			new City("Lyon", 484_000),
+			new City("Foix", 9_700),
+			new City("Pau", 77_200),
+			new City("Marseille", 850_700),
+			new City("Tarbes", 40_600)
 		));
 		
 		// On recherche la ville ayant le plus grand nombre d'habitants

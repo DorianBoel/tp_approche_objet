@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import entities.Country;
+import entities.geo.Country;
 
 public class TpSets2 {
 

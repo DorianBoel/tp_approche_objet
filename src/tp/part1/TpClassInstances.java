@@ -2,8 +2,8 @@ package tp.part1;
 
 import static utils.GeneralUtils.display;
 
-import entities.Person;
-import entities.PostalAddress;
+import entities.general.Person;
+import entities.general.PostalAddress;
 
 public class TpClassInstances {
 

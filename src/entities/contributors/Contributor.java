@@ -3,7 +3,7 @@ package entities.contributors;
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.formatCurrency;
 
-import entities.Person;
+import entities.general.Person;
 
 /**
  * Abstract class representing a generic contributor

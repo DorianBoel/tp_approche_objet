@@ -1,4 +1,4 @@
-package entities;
+package entities.general;
 
 import static utils.GeneralUtils.formatCurrency;
 

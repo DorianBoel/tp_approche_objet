@@ -5,7 +5,7 @@ import static utils.GeneralUtils.displayErr;
 import static utils.GeneralUtils.formatCurrency;
 import static utils.GeneralUtils.randomInt;
 
-import entities.Theater;
+import entities.general.Theater;
 
 public class TpTheater {
 

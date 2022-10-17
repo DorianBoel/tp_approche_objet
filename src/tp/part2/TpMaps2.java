@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import entities.City;
-import entities.Country;
+import entities.geo.City;
+import entities.geo.Country;
 import enums.Continent;
 
 import static utils.GeneralUtils.displayInMap;
