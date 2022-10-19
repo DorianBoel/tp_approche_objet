@@ -3,7 +3,7 @@ package tp.part1;
 import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.displayInArray;
 
-import entities.general.Employee;;
+import entities.general.Employee;
 
 public class TpProcessString {
 

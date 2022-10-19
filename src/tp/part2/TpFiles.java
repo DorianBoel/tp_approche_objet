@@ -65,14 +65,7 @@ public class TpFiles {
 			citiesPopulationOver25k.add("Nom de la commune;Code département;Nom de la région;Population totale;");
 			for (CensusCity city : cities) {
 				if (city.getPopulation() > 25_000) {
-					String line = String.join(
-						";",
-						city.getName(),
-						city.getDepartmentCode(),
-						city.getRegionName(),
-						Integer.toString(city.getPopulation())
-					) + ";";
-					citiesPopulationOver25k.add(line);
+					citiesPopulationOver25k.add(city.toCSV());
 				}
 			}
 			Files.write(targetPath2, citiesPopulationOver25k);

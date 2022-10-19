@@ -34,6 +34,22 @@ public class CensusCity extends City {
 		this.departmentCode = departmentCode;
 		this.regionName = regionName;
 	}
+	
+	/**
+	 * Converts this city instance to a single CSV census line,
+	 * with fields separated by semicolons.
+	 * 
+	 * @return A CSV line representing this city
+	 */
+	public String toCSV() {
+		return String.join(
+			";",
+			getName(),
+			getDepartmentCode(),
+			getRegionName(),
+			Integer.toString(getPopulation())
+		) + ";";
+	}
 
 	/**
 	 * Getter for {@link #departmentCode}.
