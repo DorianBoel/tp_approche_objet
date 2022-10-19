@@ -28,7 +28,7 @@ public enum TransactionType {
 	 * 
 	 * @param label The transaction type's label
 	 */
-	private TransactionType(String label) {
+	TransactionType(String label) {
 		this.label = label;
 	}
 

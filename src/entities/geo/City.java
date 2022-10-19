@@ -4,6 +4,8 @@ import static utils.GeneralUtils.formatNumber;
 
 import java.util.Objects;
 
+import enums.Continent;
+
 /**
  * Represents a town or city.
  * 
@@ -20,6 +22,11 @@ public class City implements Comparable<City>{
 	 * The total number of inhabitants in the city.
 	 */
 	protected int population;
+	
+	/**
+	 * The continent where this city is located.
+	 */
+	protected Continent continent;
 
 	/**
 	 * Constructor for {@link City}.
@@ -32,6 +39,20 @@ public class City implements Comparable<City>{
 	public City(String name, int population) {
 		this.name = name;
 		this.population = population;
+	}
+	
+	/**
+	 * Constructor for {@link City}.
+	 * 
+	 * Creates a new city with the given name, population and continent.
+	 * 
+	 * @param name The city's name
+	 * @param population The city's population
+	 * @param continent The city's continent
+	 */
+	public City(String name, int population, Continent continent) {
+		this(name, population);
+		this.continent = continent; 
 	}
 	
 	@Override
@@ -53,7 +74,8 @@ public class City implements Comparable<City>{
 	
 	@Override
 	public String toString() {
-		return String.format("%s, %s", name, formatNumber(population));
+		String continentStr = continent != null ? ", " + continent.getLabel() :  "";
+		return String.format("%s%s, %s habitants", name, continentStr, formatNumber(population));
 	}
 
 	/**
@@ -73,9 +95,18 @@ public class City implements Comparable<City>{
 	public int getPopulation() {
 		return population;
 	}
+	
+	/**
+	 * Getter for {@link #continent}.
+	 * 
+	 * @return This continent where this city is located
+	 */
+	public Continent getContinent() {
+		return continent;
+	}
 
 	/**
-	 * Setter for {@link #name}
+	 * Setter for {@link #name}.
 	 * 
 	 * @param name The new name to replace the current one
 	 */
@@ -84,12 +115,21 @@ public class City implements Comparable<City>{
 	}
 
 	/**
-	 * Setter for {@link #population}
+	 * Setter for {@link #population}.
 	 * 
 	 * @param population The new population value to replace the current one
 	 */
 	public void setPopulation(int population) {
 		this.population = population;
+	}
+	
+	/**
+	 * Setter for {@link #continent}.
+	 * 
+	 * @param continent The new continent to replace the current one
+	 */
+	public void setContinent(Continent continent) {
+		this.continent = continent;
 	}
 
 }
