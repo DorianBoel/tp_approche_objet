@@ -2,6 +2,8 @@ package entities.geo;
 
 import static utils.GeneralUtils.formatNumber;
 
+import java.util.Objects;
+
 /**
  * Represents a town or city.
  * 
@@ -30,6 +32,18 @@ public class City implements Comparable<City>{
 	public City(String name, int population) {
 		this.name = name;
 		this.population = population;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof City)) {
+			return false;
+		}
+		City cast = (City) obj;
+		if (Objects.equals(name, cast.getName()) && population == cast.getPopulation()) {
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
