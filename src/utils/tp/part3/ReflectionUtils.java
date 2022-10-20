@@ -1,6 +1,7 @@
 package utils.tp.part3;
 
 import java.lang.reflect.Field;
+import java.util.Objects;
 
 import entities.exceptions.ReflectionException;
 import utils.NonInstantiable;
@@ -36,7 +37,7 @@ public class ReflectionUtils extends NonInstantiable {
 		Field[] fields = objClass.getDeclaredFields();
 		for (Field field : fields) {
 			field.setAccessible(true);
-			System.out.println(String.format("Attribut '%s' = %s", field.getName(), field.get(obj).toString()));
+			System.out.println(String.format("Attribut '%s' = %s", field.getName(), Objects.toString(field.get(obj))));
 		}
 		System.out.println();
 	}

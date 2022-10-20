@@ -13,7 +13,7 @@ public class TpSets2 {
 
 	public static void main(String[] args) {
 		
-		// Initialisation d'une liste contenant plusieurs instances de ville
+		// Initialisation d'un set contenant plusieurs instances de ville
 		Set<Country> countries = new HashSet<>(Arrays.asList(
 			new Country("USA", 334_805_000, 59_495),
 			new Country("France", 65_585_000, 43_551),
@@ -63,7 +63,7 @@ public class TpSets2 {
 		// On le supprime du set
 		countries.remove(minTotalGdpCountry);
 		
-		// Liste finale
+		// Set final
 		displayInCollection(countries);
 		
 	}

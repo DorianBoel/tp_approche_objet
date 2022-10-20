@@ -53,13 +53,13 @@ public class TpMaps2 {
 		
 		// Initialisation d'une liste de pays
 		List<Country> countryList = new ArrayList<>(Arrays.asList(
-			new Country("France", 65_000_000, Continent.EUROPE),
-			new Country("Allemagne", 80_000_000, Continent.EUROPE),
-			new Country("Belqique", 10_000_000, Continent.EUROPE),
-			new Country("Russie", 150_000_000, Continent.ASIA),
-			new Country("Chine", 1_400_000_000, Continent.ASIA),
-			new Country("Indonesia", 220_000_000, Continent.OCEANIA),
-			new Country("Australia", 20_000_000, Continent.OCEANIA)
+			new Country("France", Continent.EUROPE, 65_000_000),
+			new Country("Allemagne", Continent.EUROPE, 80_000_000),
+			new Country("Belqique", Continent.EUROPE, 10_000_000),
+			new Country("Russie", Continent.ASIA, 150_000_000),
+			new Country("Chine", Continent.ASIA, 1_400_000_000),
+			new Country("Indonesia", Continent.OCEANIA, 220_000_000),
+			new Country("Australia", Continent.OCEANIA, 20_000_000)
 		));
 		
 		// Initialisation d'une nouvelle map

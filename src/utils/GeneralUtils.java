@@ -1,6 +1,7 @@
 package utils;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Field;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +9,8 @@ import java.time.format.FormatStyle;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
+
+import entities.annotations.ToString;
 
 /**
  * Non-instantiable class containing various utility methods
@@ -172,7 +175,7 @@ public final class GeneralUtils extends NonInstantiable {
 	}
 	
 	/**
-	 * Returns a random integer two given values.
+	 * Returns a random integer between two given values.
 	 * 
 	 * @param min The minimum value a generated number can have
 	 * @param max The maximum value a generated number can have
@@ -180,6 +183,41 @@ public final class GeneralUtils extends NonInstantiable {
 	 */
 	public static int randomInt(int min, int max) {
 		return (int) Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	/**
+	 * Returns a {@code String} representation of a given object
+	 * containing only attributes annotated with the {@link ToString} annotation.
+	 * The resulting string format follows the annotation's parameters.
+	 * 
+	 * @param obj The object to convert to string
+	 * @return The string reprensentation of the object
+	 * @throws IllegalArgumentException If this {@code Field} object
+	 * is enforcing Java language access control and the underlying
+     * field is inaccessible
+	 * @throws IllegalAccessException If the specified object is not an
+     * instance of the class or interface declaring the underlying
+     * field (or a subclass or implementor thereof)
+	 */
+	public static String annotatedToString(Object obj) throws IllegalArgumentException, IllegalAccessException {
+		if (obj == null) {
+			return Objects.toString(obj);
+		}
+		Class<?> objClass = obj.getClass();
+		StringBuilder strBuilder = new StringBuilder(objClass.getSimpleName() + "\n");
+		for (Field field : objClass.getDeclaredFields()) {
+			field.setAccessible(true);
+			ToString annotation = field.getAnnotation(ToString.class);
+			if (annotation != null) {
+				String value =
+					annotation.uppercase() ?
+					Objects.toString(field.get(obj)).toUpperCase() :
+					Objects.toString(field.get(obj));
+				strBuilder.append(String.format("%s%s ", value, annotation.separator()));
+			}
+		}
+		strBuilder.deleteCharAt(strBuilder.length() - 1);
+		return strBuilder.toString();
 	}
 	
 }

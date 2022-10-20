@@ -48,7 +48,9 @@ public enum Continent {
 	}
 	
 	/**
-	 * @return This continent's label.
+	 * Getter for {@link #label}.
+	 * 
+	 * @return This continent's label
 	 */
 	public String getLabel() {
 		return label;

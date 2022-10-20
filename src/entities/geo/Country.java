@@ -2,6 +2,7 @@ package entities.geo;
 
 import static utils.GeneralUtils.formatNumber;
 
+import entities.annotations.ToString;
 import enums.Continent;
 
 /**
@@ -14,22 +15,25 @@ public class Country {
 	/**
 	 * The country's official name.
 	 */
+	@ToString(uppercase = true, separator = ",")
 	private String name;
+	
+	/**
+	 * The continent where the country is located.
+	 */
+	@ToString(separator = ",")
+	private Continent continent;
 	
 	/**
 	 * The total number of inhabitants in the country.
 	 */
+	@ToString(separator = " habitants")
 	private int population;
 	
 	/**
 	 * The country's gross domestic product per capita.
 	 */
 	private int gdpCapita;
-	
-	/**
-	 * The continent where the country is located.
-	 */
-	private Continent continent;
 	
 	/**
 	 * Constructor for {@link Country}.
@@ -55,10 +59,10 @@ public class Country {
 	 * @param population The country's population
 	 * @param continent The country's gross domestic product per capita
 	 */
-	public Country(String name, int population, Continent continent) {
+	public Country(String name, Continent continent, int population) {
 		this.name = name;
-		this.population = population;
 		this.continent = continent;
+		this.population = population;
 	}
 	
 	/**
@@ -93,6 +97,15 @@ public class Country {
 	}
 
 	/**
+	 * Getter for {@link #continent}.
+	 * 
+	 * @return This's country's continent
+	 */
+	public Continent getContinent() {
+		return continent;
+	}
+	
+	/**
 	 * Getter for {@link #population}.
 	 * 
 	 * @return This country's total population
@@ -109,15 +122,6 @@ public class Country {
 	public int getGdpCapita() {
 		return gdpCapita;
 	}
-	
-	/**
-	 * Getter for {@link #continent}.
-	 * 
-	 * @return This's country's continent
-	 */
-	public Continent getContinent() {
-		return continent;
-	}
 
 	/**
 	 * Setter for {@link #name}.
@@ -126,6 +130,15 @@ public class Country {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	/**
+	 * Setter for {@link #continent}.
+	 * 
+	 * @param continent The new continent to replace the current one
+	 */
+	public void setContinent(Continent continent) {
+		this.continent = continent;
 	}
 
 	/**
@@ -144,15 +157,6 @@ public class Country {
 	 */
 	public void setGdpCapita(int gdpCapita) {
 		this.gdpCapita = gdpCapita;
-	}
-	
-	/**
-	 * Setter for {@link #continent}.
-	 * 
-	 * @param continent The new continent to replace the current one
-	 */
-	public void setContinent(Continent continent) {
-		this.continent = continent;
 	}
 	
 }
