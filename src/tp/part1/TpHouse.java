@@ -1,11 +1,9 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayErr;
-
 import entities.house.House;
 import entities.house.Room;
 import enums.RoomType;
+import utils.DisplayUtils;
 
 public class TpHouse {
 
@@ -29,7 +27,7 @@ public class TpHouse {
 			try {
 				house.addRoom(room);
 			} catch (Exception err) {
-				displayErr(err);
+				DisplayUtils.displayErr(err);
 			}
 		}
 			
@@ -37,30 +35,30 @@ public class TpHouse {
 		try {
 			house.addRoom(null);
 		} catch (Exception err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 		
 		//ou bien sa superficie est négative
 		try {
 			house.addRoom(new Room(RoomType.LIVING_ROOM, 0, -10));
 		} catch (Exception err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 		
 		// On affiche ensuite la superficie du rez de chaussée de la maison
-		display(house.getAreaOfFloor(0) + " m²");
+		DisplayUtils.display(house.getAreaOfFloor(0) + " m²");
 		
 		// La superficie du 1er étage
-		display(house.getAreaOfFloor(1) + " m²");
+		DisplayUtils.display(house.getAreaOfFloor(1) + " m²");
 		
 		// La superficie totale de la maison
-		display(house.getTotalArea() + " m²");
+		DisplayUtils.display(house.getTotalArea() + " m²");
 		
 		// Le nombre de cuisines dans la maison
-		display(house.countRoomType(RoomType.KITCHEN));
+		DisplayUtils.display(house.countRoomType(RoomType.KITCHEN));
 		
 		// La superficie totale de toutes les chambres de la maison
-		display(house.getTotalAreaOfRoomType(RoomType.BEDROOM) + " m²");
+		DisplayUtils.display(house.getTotalAreaOfRoomType(RoomType.BEDROOM) + " m²");
 		
 	}
 	

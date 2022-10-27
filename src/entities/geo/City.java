@@ -11,7 +11,7 @@ import enums.Continent;
  * 
  * @author DorianBoel
  */
-public class City implements Comparable<City>{
+public class City implements Comparable<City> {
 	
 	/**
 	 * The city's official full name.

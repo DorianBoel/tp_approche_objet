@@ -1,9 +1,9 @@
 package utils.tp.part1;
 
-import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.formatNumber;
 
-import entities.shapes.Shape;
+import interfaces.Shape;
+import utils.DisplayUtils;
 import utils.NonInstantiable;
 
 /**
@@ -20,7 +20,7 @@ public final class ShapeUtils extends NonInstantiable {
 	 * @param shape The shape from which to display info
 	 */
 	public static void displayShapeInfo(Shape shape) {
-		display(String.format(
+		DisplayUtils.display(String.format(
 			"Type: %s; Périmètre: %s; Surface: %s",
 			shape.getClass().getSimpleName(),
 			formatNumber(shape.getPerimeter()),

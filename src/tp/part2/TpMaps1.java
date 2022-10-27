@@ -1,11 +1,9 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInCollection;
-import static utils.GeneralUtils.displayInMap;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import utils.DisplayUtils;
 
 public class TpMaps1 {
 
@@ -20,7 +18,7 @@ public class TpMaps1 {
 		salaryMap.put("Chantal", 2418f);
 		
 		// Taille de la map
-		display(salaryMap.size());
+		DisplayUtils.display(salaryMap.size());
 		
 		// Initialisation d'une nouvelle map
 		Map<Integer, String> cityMap = new HashMap<>();
@@ -36,13 +34,13 @@ public class TpMaps1 {
 		cityMap.put(33, "Bordeaux");
 		
 		// Affichage des clés de la map
-		displayInCollection(cityMap.keySet());
+		DisplayUtils.displayInCollection(cityMap.keySet());
 		
 		// Affichage des valeurs de la map
-		displayInCollection(cityMap.values());
+		DisplayUtils.displayInCollection(cityMap.values());
 		
 		// Taille de la map
-		display(cityMap.size());
+		DisplayUtils.display(cityMap.size());
 		
 		// Initialisation de deux nouvelles maps
 		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
@@ -62,7 +60,7 @@ public class TpMaps1 {
 		map3.putAll(map1);
 		map3.putAll(map2);
 		
-		displayInMap(map3);
+		DisplayUtils.displayInMap(map3);
 		
 	}
 	

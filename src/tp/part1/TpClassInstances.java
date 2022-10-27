@@ -1,9 +1,8 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-
 import entities.general.Person;
 import entities.general.PostalAddress;
+import utils.DisplayUtils;
 
 public class TpClassInstances {
 
@@ -13,8 +12,8 @@ public class TpClassInstances {
 		PostalAddress address1 = new PostalAddress("5", "avenue Ferdinand de Lesseps", "38000", "Grenoble");
 		PostalAddress address2 = new PostalAddress("71", "rue Pierre de Coubertin", "31100", "Toulouse");
 		
-		display(address1);
-		display(address2);
+		DisplayUtils.display(address1);
+		DisplayUtils.display(address2);
 		
 		// On instantie deux nouvelles personnes avec les adresses existantes
 		Person person1 = new Person("Pucepré", "Jean-Paul", address1);
@@ -22,8 +21,8 @@ public class TpClassInstances {
 		person2.setAddress(address2);
 		
 		// Affichage du nom complet d'une personne avec une méthode de classe
-		display(person1.getFullName());
-		display(person2.getFullName());
+		DisplayUtils.display(person1.getFullName());
+		DisplayUtils.display(person2.getFullName());
 		
 	}
 

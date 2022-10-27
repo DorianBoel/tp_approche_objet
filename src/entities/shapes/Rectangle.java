@@ -1,11 +1,13 @@
 package entities.shapes;
 
+import interfaces.Shape;
+
 /**
  * Represents a geometric rectangle shape
  *
  * @author macbook
  */
-public class Rectangle extends Shape {
+public class Rectangle implements Shape {
 	
 	/**
 	 * The length of the top and bottom sides of the rectangle.

@@ -1,9 +1,5 @@
 package tp.part3;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInArray;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,23 +7,24 @@ import java.util.List;
 import entities.geo.City;
 import enums.Continent;
 import enums.Season;
+import utils.DisplayUtils;
 
 public class TpEnums {
 
 	public static void main(String[] args) {
 		
 		// On affiche toutes les saisons grâce à une boucle
-		displayInArray(Season.values());
+		DisplayUtils.displayInArray(Season.values());
 		
 		// On recherche la saison dont le nom d'instance correspond à une chaîne
 		String seasonInstanceName = "SUMMER";
 		Season seasonInstance = Season.valueOf(seasonInstanceName);
-		display(seasonInstance);
+		DisplayUtils.display(seasonInstance);
 		
 		// On recherche la saison dont l'attribut nom correspond à une chaîne
 		String seasonName = "Hiver";
 		Season seasonInstance2 = Season.withName(seasonName);
-		display(seasonInstance2);
+		DisplayUtils.display(seasonInstance2);
 		
 		// On initialise une liste de villes avec le continent dans leurs paramètres
 		List<City> cities = new ArrayList<>(
@@ -44,7 +41,7 @@ public class TpEnums {
 		);
 		
 		// Contenu de la liste
-		displayInCollection(cities);
+		DisplayUtils.displayInCollection(cities);
 		
 	}
 	

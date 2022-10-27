@@ -1,11 +1,13 @@
 package enums;
 
+import interfaces.Labeled;
+
 /**
  * Enumeration listing every continent on Earth.
  * 
  * @author DorianBoel
  */
-public enum Continent {
+public enum Continent implements Labeled {
 
 	/**
 	 * Represents the African continent.
@@ -52,6 +54,7 @@ public enum Continent {
 	 * 
 	 * @return This continent's label
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}

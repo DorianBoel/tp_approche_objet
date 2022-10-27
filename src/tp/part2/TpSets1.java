@@ -1,11 +1,10 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import utils.DisplayUtils;
 
 public class TpSets1 {
 
@@ -15,7 +14,7 @@ public class TpSets1 {
 		Set<Double> doubleSet = new HashSet<>(Arrays.asList(1.5, 8.25, -7.32, 13.3, -12.45, 48.5, 0.01));
 		
 		// Affichage du contenu du set
-		displayInCollection(doubleSet);
+		DisplayUtils.displayInCollection(doubleSet);
 		
 		// On recherche le nombre le plus grand dans le set
 		double maxValue = Double.MIN_VALUE;
@@ -24,7 +23,7 @@ public class TpSets1 {
 				maxValue = db;
 			}
 		}
-		display(maxValue);
+		DisplayUtils.display(maxValue);
 		
 		// On recherche le nombre le plus petit puis on le supprime du set
 		double minValue = Double.MAX_VALUE;
@@ -36,7 +35,7 @@ public class TpSets1 {
 		doubleSet.remove(minValue);
 		
 		// On affiche à nouveau le contenu du set
-		displayInCollection(doubleSet);
+		DisplayUtils.displayInCollection(doubleSet);
 		
 		// On instancie un nouveau set de chaînes de caractères
 		Set<String> stringSet = new HashSet<>(Arrays.asList(
@@ -58,13 +57,13 @@ public class TpSets1 {
 				longestStr = str;
 			}
 		}
-		display(longestStr);
+		DisplayUtils.display(longestStr);
 		
 		// On la supprime du set
 		stringSet.remove(longestStr);
 		
 		// On affiche à nouveau le contenu du set
-		displayInCollection(stringSet);
+		DisplayUtils.displayInCollection(stringSet);
 		
 	}
 	

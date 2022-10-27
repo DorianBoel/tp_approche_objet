@@ -1,9 +1,5 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayErr;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.geo.CensusCity;
+import utils.DisplayUtils;
 import utils.tp.part2.FileAccess;
 
 public class TpFiles {
@@ -38,7 +35,7 @@ public class TpFiles {
 			
 			// Contenu du nouveau fichier
 			List<String> newLines = FileAccess.getLines(targetPath1);
-			displayInCollection(newLines);
+			DisplayUtils.displayInCollection(newLines);
 
 			// On initialise une liste vide
 			List<CensusCity> cities = new ArrayList<>();
@@ -56,7 +53,7 @@ public class TpFiles {
 			}
 			
 			// Nombre total de villes
-			display(cities.size());
+			DisplayUtils.display(cities.size());
 			
 			// On crée ensuite un nouveau fichier CSV ne contenant que les villes dont la populations est > 25 000
 			Path targetPath2 = Paths.get("data/census_filter.csv");
@@ -71,10 +68,10 @@ public class TpFiles {
 			Files.write(targetPath2, citiesPopulationOver25k);
 			
 			// Nombre de villes résultantes
-			display(FileAccess.getLines(targetPath2).size() - 1);
+			DisplayUtils.display(FileAccess.getLines(targetPath2).size() - 1);
 			
 		} catch (IOException err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 		
 	}

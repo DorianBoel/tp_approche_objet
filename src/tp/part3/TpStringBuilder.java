@@ -3,7 +3,8 @@ package tp.part3;
 import java.util.Locale;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import static utils.GeneralUtils.display;
+
+import utils.DisplayUtils;
 
 public class TpStringBuilder {
 
@@ -11,7 +12,7 @@ public class TpStringBuilder {
 		
 		BiFunction<Long, Long, Consumer<String>> displayTimerResult = (start, end) ->
 			message ->
-				display(String.format(Locale.US, message, (double) (end - start) / 1000));
+				DisplayUtils.display(String.format(Locale.US, message, (double) (end - start) / 1000));
 
 		// On initialise un nouveau string builder
 		StringBuilder builder = new StringBuilder();
@@ -28,7 +29,7 @@ public class TpStringBuilder {
 		long timerEnd = System.currentTimeMillis();
 		
 		String builderStr = builder.toString();
-		display(builderStr.length());
+		DisplayUtils.display(builderStr.length());
 		
 		// On affiche le temps d'exécution de l'opération
 		displayTimerResult.apply(timerStart, timerEnd).accept("L'opération avec le StringBuilder a mis %.3f secondes à s'être effectuée");
@@ -45,7 +46,7 @@ public class TpStringBuilder {
 		
 		timerEnd = System.currentTimeMillis();
 		
-		display(concatStr.length());
+		DisplayUtils.display(concatStr.length());
 		
 		displayTimerResult.apply(timerStart, timerEnd).accept("L'opération avec l'opérateur '+' a mis %.3f secondes à s'être effectuée");
 

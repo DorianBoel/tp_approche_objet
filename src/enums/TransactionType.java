@@ -1,12 +1,14 @@
 package enums;
 
+import interfaces.Labeled;
+
 /**
  * Enumeration listing the existing types of 
  * transactions for a bank account.
  * 
  * @author DorianBoel
  */
-public enum TransactionType {
+public enum TransactionType implements Labeled {
 
 	/**
 	 * The type of a {@link entities.bank.Credit Credit} transaction.

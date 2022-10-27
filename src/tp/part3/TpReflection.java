@@ -1,10 +1,9 @@
 package tp.part3;
 
-import static utils.GeneralUtils.displayErr;
-
 import entities.exceptions.ReflectionException;
 import entities.geo.City;
 import enums.Continent;
+import utils.DisplayUtils;
 import utils.tp.part3.ReflectionUtils;;
 
 public class TpReflection {
@@ -23,7 +22,7 @@ public class TpReflection {
 			ReflectionUtils.displayAttributes(null);
 
 		} catch (IllegalArgumentException | IllegalAccessException | ReflectionException err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 		
 	}

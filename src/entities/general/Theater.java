@@ -1,6 +1,6 @@
 package entities.general;
 
-import static utils.GeneralUtils.display;
+import utils.DisplayUtils;
 
 /**
  * Represents a theater business.
@@ -65,7 +65,7 @@ public class Theater {
 	 * number of remaining available seats.
 	 */
 	public void displayRegistrationInfo() {
-		display(String.format(
+		DisplayUtils.display(String.format(
 			"Personnes inscrites: %d, places restantes: %d",
 			registeredCustomerCount,
 			capacity - registeredCustomerCount

@@ -9,8 +9,7 @@ import java.util.Map;
 import entities.geo.City;
 import entities.geo.Country;
 import enums.Continent;
-
-import static utils.GeneralUtils.displayInMap;
+import utils.DisplayUtils;
 
 public class TpMaps2 {
 
@@ -49,13 +48,13 @@ public class TpMaps2 {
 		cityMap.remove(minPopulationCityKey);
 		
 		// Map finale
-		displayInMap(cityMap);
+		DisplayUtils.displayInMap(cityMap);
 		
 		// Initialisation d'une liste de pays
 		List<Country> countryList = new ArrayList<>(Arrays.asList(
 			new Country("France", Continent.EUROPE, 65_000_000),
 			new Country("Allemagne", Continent.EUROPE, 80_000_000),
-			new Country("Belqique", Continent.EUROPE, 10_000_000),
+			new Country("Belgique", Continent.EUROPE, 10_000_000),
 			new Country("Russie", Continent.ASIA, 150_000_000),
 			new Country("Chine", Continent.ASIA, 1_400_000_000),
 			new Country("Indonesia", Continent.OCEANIA, 220_000_000),
@@ -79,7 +78,7 @@ public class TpMaps2 {
 		}
 		
 		// Map obtenue
-		displayInMap(countriesPerContinent);
+		DisplayUtils.displayInMap(countriesPerContinent);
 		
 	}
 

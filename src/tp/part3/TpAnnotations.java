@@ -1,8 +1,6 @@
 package tp.part3;
 
 import static utils.GeneralUtils.annotatedToString;
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayErr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,10 +8,10 @@ import java.util.List;
 
 import entities.geo.Country;
 import enums.Continent;
+import utils.DisplayUtils;
 
 public class TpAnnotations {
 
-	
 	public static void main(String[] args) {
 		
 		// Initialisation d'une liste contenant plusieurs instances de ville
@@ -30,13 +28,14 @@ public class TpAnnotations {
 		));
 	
 		try {
+			
 			// Affichage des données à l'aide de la méthode toString et des annotations
 			for (Country country : countries) {				
-				display(annotatedToString(country));
+				DisplayUtils.display(annotatedToString(country));
 			}
 			
 		} catch (IllegalArgumentException | IllegalAccessException err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 	}
 	

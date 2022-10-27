@@ -6,8 +6,6 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Collection;
-import java.util.Map;
 import java.util.Objects;
 
 import entities.annotations.ToString;
@@ -19,70 +17,6 @@ import entities.annotations.ToString;
  * @author DorianBoel
  */
 public final class GeneralUtils extends NonInstantiable {
-
-	/**
-	 * This class should not be instantiated.
-	 */
-	private GeneralUtils() {
-		super();
-	}
-	
-	/**
-	 * Prints a message in the console followed by an empty new line.
-	 * 
-	 * @param message The message to display
-	 */
-	public static void display(Object message) {
-		System.out.println(message);
-		System.out.println();
-	}
-	
-	/**
-	 * Prints a message in the console as an error followed by an empty new line.
-	 * 
-	 * @param message The error message to display
-	 */
-	public static void displayErr(Object message) {
-		System.err.println(message);
-		System.out.println();
-	}
-	
-	/**
-	 * Prints each value in an array, then prints an empty new line at the end.
-	 * 
-	 * @param <T> The type of values in the array
-	 * @param array The array from which to display values
-	 */
-	public static <T> void displayInArray(T[] array) {
-		for (T o : array) {
-			System.out.println(o);
-		}
-		System.out.println();
-	}
-	
-	/**
-	 * Prints each value in a {@link Collection} object, then prints an empty new line at the end.
-	 * 
-	 * @param <T> The type of values in the collection
-	 * @param collection The collection from which to display values
-	 */
-	public static <T> void displayInCollection(Collection<T> collection) {
-		displayInArray(Objects.requireNonNull(collection).toArray());
-	}
-	
-	/**
-	 * Prints each key-value pair in a {@link Map}, then prints an empty new line at the end.
-	 * 
-	 * @param <K> The type of keys in the map
-	 * @param <V> The type of values in the map
-	 * @param map The map from which to display pairs
-	 */
-	public static <K, V> void displayInMap(Map<K, V> map) {
-		for (K key : map.keySet()) {
-			System.out.println(String.format("%s : %s", String.valueOf(key), String.valueOf(map.get(key))));
-		}
-		System.out.println();
-	}
 	
 	/**
 	 * Returns a {@code String} representation of an object as
@@ -93,6 +27,41 @@ public final class GeneralUtils extends NonInstantiable {
 	 */
 	public static String toStringDefault(Object o) {
 		return o.getClass().getName() + '@' + Integer.toHexString(o.hashCode());
+	}
+	
+	/**
+	 * Returns a {@code String} representation of a given object
+	 * containing only attributes annotated with the {@link ToString} annotation.
+	 * The resulting string format follows the annotation's parameters.
+	 * 
+	 * @param obj The object to convert to string
+	 * @return The string reprensentation of the object
+	 * @throws IllegalArgumentException If this {@code Field} object
+	 * is enforcing Java language access control and the underlying
+     * field is inaccessible
+	 * @throws IllegalAccessException If the specified object is not an
+     * instance of the class or interface declaring the underlying
+     * field (or a subclass or implementor thereof)
+	 */
+	public static String annotatedToString(Object obj) throws IllegalArgumentException, IllegalAccessException {
+		if (obj == null) {
+			return Objects.toString(obj);
+		}
+		Class<?> objClass = obj.getClass();
+		StringBuilder strBuilder = new StringBuilder(objClass.getSimpleName() + "\n");
+		for (Field field : objClass.getDeclaredFields()) {
+			field.setAccessible(true);
+			ToString annotation = field.getAnnotation(ToString.class);
+			if (annotation != null) {
+				String value =
+					annotation.uppercase() ?
+					Objects.toString(field.get(obj)).toUpperCase() :
+					Objects.toString(field.get(obj));
+				strBuilder.append(String.format("%s%s ", value, annotation.separator()));
+			}
+		}
+		strBuilder.deleteCharAt(strBuilder.length() - 1);
+		return strBuilder.toString();
 	}
 	
 	/**
@@ -183,41 +152,6 @@ public final class GeneralUtils extends NonInstantiable {
 	 */
 	public static int randomInt(int min, int max) {
 		return (int) Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-	
-	/**
-	 * Returns a {@code String} representation of a given object
-	 * containing only attributes annotated with the {@link ToString} annotation.
-	 * The resulting string format follows the annotation's parameters.
-	 * 
-	 * @param obj The object to convert to string
-	 * @return The string reprensentation of the object
-	 * @throws IllegalArgumentException If this {@code Field} object
-	 * is enforcing Java language access control and the underlying
-     * field is inaccessible
-	 * @throws IllegalAccessException If the specified object is not an
-     * instance of the class or interface declaring the underlying
-     * field (or a subclass or implementor thereof)
-	 */
-	public static String annotatedToString(Object obj) throws IllegalArgumentException, IllegalAccessException {
-		if (obj == null) {
-			return Objects.toString(obj);
-		}
-		Class<?> objClass = obj.getClass();
-		StringBuilder strBuilder = new StringBuilder(objClass.getSimpleName() + "\n");
-		for (Field field : objClass.getDeclaredFields()) {
-			field.setAccessible(true);
-			ToString annotation = field.getAnnotation(ToString.class);
-			if (annotation != null) {
-				String value =
-					annotation.uppercase() ?
-					Objects.toString(field.get(obj)).toUpperCase() :
-					Objects.toString(field.get(obj));
-				strBuilder.append(String.format("%s%s ", value, annotation.separator()));
-			}
-		}
-		strBuilder.deleteCharAt(strBuilder.length() - 1);
-		return strBuilder.toString();
 	}
 	
 }

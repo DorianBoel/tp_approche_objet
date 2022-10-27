@@ -1,12 +1,12 @@
 package tp.part3;
 
-import static utils.GeneralUtils.display;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import utils.DisplayUtils;
 
 public class TpDates {
 
@@ -17,7 +17,7 @@ public class TpDates {
 		
 		// On définit un formatteur de date simple
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		display(dateFormat.format(today));
+		DisplayUtils.display(dateFormat.format(today));
 		
 		// Le constructeur date avec paramètres est déprécié, mais permet d'accéder à n'importe quelle date et heure
 		@SuppressWarnings("deprecation")
@@ -25,10 +25,10 @@ public class TpDates {
 		
 		// On définit un formatter de date avec l'heure
 		DateFormat dateTimeFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		display(dateTimeFormat.format(date1));
+		DisplayUtils.display(dateTimeFormat.format(date1));
 		
 		// On affiche la date et l'heure actuelles avec le formatter précédent
-		display(dateTimeFormat.format(today));
+		DisplayUtils.display(dateTimeFormat.format(today));
 		
 		// On crée un nouveau Calendar puis on lui assigne les valeurs de date et heure
 		Calendar calendar = Calendar.getInstance();
@@ -37,14 +37,14 @@ public class TpDates {
 		Date date2 = calendar.getTime();
 		
 		// On affiche la date grâce au formatter
-		display(dateFormat.format(date2));
+		DisplayUtils.display(dateFormat.format(date2));
 		
 		// On récupère la date actuelle et on l'assigne au Calendar
 		calendar.setTime(new Date());
 		Date dateNow = calendar.getTime();
 		
 		// On l'affiche au format date-heure
-		display(dateTimeFormat.format(dateNow));
+		DisplayUtils.display(dateTimeFormat.format(dateNow));
 		
 		// On définit des formatter de dates avec des locales différents
 		// France
@@ -63,7 +63,7 @@ public class TpDates {
 			dateTimeFormatCN,
 			dateTimeFormatDE
 		}) {
-			display(format.format(dateNow));
+			DisplayUtils.display(format.format(dateNow));
 		}
 			
 	}

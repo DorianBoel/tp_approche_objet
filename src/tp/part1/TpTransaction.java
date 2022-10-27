@@ -1,7 +1,5 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInArray;
 import static utils.GeneralUtils.formatCurrency;
 
 import java.time.LocalDate;
@@ -9,6 +7,7 @@ import java.time.LocalDate;
 import entities.bank.Credit;
 import entities.bank.Debit;
 import entities.bank.Transaction;
+import utils.DisplayUtils;
 
 public class TpTransaction {
 
@@ -23,7 +22,7 @@ public class TpTransaction {
 		};
 		
 		// Affichage du contenu du tableau
-		displayInArray(transactions);
+		DisplayUtils.displayInArray(transactions);
 		
 		// Somme initiale
 		float total = 0f;
@@ -34,7 +33,7 @@ public class TpTransaction {
 		}
 		
 		// Somme totale à la fin des transactions
-		display(formatCurrency(total));
+		DisplayUtils.display(formatCurrency(total));
 		
 	}
 

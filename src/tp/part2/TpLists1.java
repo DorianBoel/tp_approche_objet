@@ -1,12 +1,11 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+
+import utils.DisplayUtils;
 
 public class TpLists1 {
 
@@ -21,7 +20,7 @@ public class TpLists1 {
 		}	
 	
 		// Taille de la liste
-		display(integerList1.size());
+		DisplayUtils.display(integerList1.size());
 		
 		// On initialise 2 listes contenant des chaînes de caractères
 		List<String> list1 = new ArrayList<>(Arrays.asList("Rouge", "Vert", "Orange"));
@@ -36,17 +35,17 @@ public class TpLists1 {
 				list3.add(str);
 			}
 		}
-		display(list3);
-		displayInCollection(list3);
+		DisplayUtils.display(list3);
+		DisplayUtils.displayInCollection(list3);
 		
 		// Initialisation d'une nouvelle liste d'entiers
 		List<Integer> integerList2 = new ArrayList<>(Arrays.asList(-1, 5, 7, 3, -2, 4, 8, 5));
 		
 		// On affiche chaque élément de cette liste
-		displayInCollection(integerList2);
+		DisplayUtils.displayInCollection(integerList2);
 		
 		// Taille de la liste
-		display(integerList2.size());
+		DisplayUtils.display(integerList2.size());
 		
 		// On recherche le plus grand élément de la liste
 		int maxValue = Integer.MIN_VALUE;
@@ -55,7 +54,7 @@ public class TpLists1 {
 				maxValue = n;
 			}
 		}
-		display(maxValue);
+		DisplayUtils.display(maxValue);
 		
 		// On recherche la valeur la plus petite de la liste
 		int minValue = Integer.MAX_VALUE;
@@ -64,7 +63,7 @@ public class TpLists1 {
 				minValue = n;
 			}
 		}
-		display(minValue);
+		DisplayUtils.display(minValue);
 		
 		// On supprime cette valeur
 		integerList2.remove((Integer) minValue);
@@ -78,7 +77,7 @@ public class TpLists1 {
 		}
 		
 		// Affichage de la liste résultante
-		displayInCollection(integerList2);
+		DisplayUtils.displayInCollection(integerList2);
 		
 		// Initialisation d'une nouvelle liste de chaînes de caractères
 		List<String> strList = new ArrayList<>(
@@ -116,7 +115,7 @@ public class TpLists1 {
 				iterator.remove();
 			}
 		}
-		displayInCollection(strList);
+		DisplayUtils.displayInCollection(strList);
 		
 	}
 	

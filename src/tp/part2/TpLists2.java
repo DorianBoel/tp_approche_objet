@@ -1,13 +1,11 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import entities.geo.City;
+import utils.DisplayUtils;
 
 public class TpLists2 {
 
@@ -34,7 +32,7 @@ public class TpLists2 {
 				maxPopulationCity = city;
 			}
 		}
-		display(maxPopulationCity);
+		DisplayUtils.display(maxPopulationCity);
 		
 		// On recherche la ville ayant le plus petit nombre d'habitants
 		City minPopulationCity = null;
@@ -57,7 +55,7 @@ public class TpLists2 {
 		}
 		
 		// Liste finale
-		displayInCollection(cities);
+		DisplayUtils.displayInCollection(cities);
 		
 	}
 	

@@ -1,11 +1,13 @@
 package enums;
 
+import interfaces.Labeled;
+
 /**
  * Enumeration listing the four seasons in a year.
  * 
  * @author DorianBoel
  */
-public enum Season {
+public enum Season implements Labeled {
 	
 	/**
 	 * Represents the season of spring.
@@ -30,7 +32,7 @@ public enum Season {
 	/**
 	 * The season's common name.
 	 */
-	private String name;
+	private String label;
 	
 	/**
 	 * The season's order in a year relative to the other seasons
@@ -44,8 +46,8 @@ public enum Season {
 	 * @param name The season's name
 	 * @param order The season's order in a year
 	 */
-	Season(String name, int order) {
-		this.name = name;
+	Season(String label, int order) {
+		this.label = label;
 		this.order = order;
 	}
 	
@@ -57,7 +59,7 @@ public enum Season {
 	 */
 	public static Season withName(String name) {
 		for (Season season : Season.values()) {
-			if (season.getName().equals(name)) {
+			if (season.getLabel().equals(name)) {
 				return season;
 			}
 		}
@@ -65,12 +67,12 @@ public enum Season {
 	}
 	
 	/**
-	 * Getter for {@link #name}.
+	 * Getter for {@link #label}.
 	 * 
-	 * @return This season's name
+	 * @return This season's label
 	 */
-	public String getName() {
-		return this.name;
+	public String getLabel() {
+		return label;
 	}
 
 	/**
@@ -79,7 +81,7 @@ public enum Season {
 	 * @return This season's order in a year
 	 */
 	public int getOrder() {
-		return this.order;
+		return order;
 	}
 	
 }

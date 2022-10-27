@@ -1,20 +1,19 @@
 package tp.part3;
 
-import static utils.GeneralUtils.display;
-
 import java.util.function.BiConsumer;
 
 import entities.geo.City;
+import utils.DisplayUtils;
 
 public class TpEquals {
 
 	public static void main(String[] args) {
 		
 		BiConsumer<City, City> areCitiesEqualMethod = (city1, city2) ->
-			display(city1.equals(city2));
+			DisplayUtils.display(city1.equals(city2));
 			
 		BiConsumer<City, City> areCitiesEqualOperator = (city1, city2) ->
-			display(city1 == city2);
+			DisplayUtils.display(city1 == city2);
 		
 		// On instancie deux villes aux attributs identiques
 		City city1 = new City("Nice", 343_000);

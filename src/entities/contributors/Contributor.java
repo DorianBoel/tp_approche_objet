@@ -1,9 +1,9 @@
 package entities.contributors;
 
-import static utils.GeneralUtils.display;
 import static utils.GeneralUtils.formatCurrency;
 
 import entities.general.Person;
+import utils.DisplayUtils;
 
 /**
  * Abstract class representing a generic contributor
@@ -36,7 +36,7 @@ public abstract class Contributor extends Person {
 	 * Displays info pertaining to this contributor.
 	 */
 	public void displayInfo() {
-		display(toString());
+		DisplayUtils.display(toString());
 	};
 	
 	/**

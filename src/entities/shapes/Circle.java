@@ -1,11 +1,13 @@
 package entities.shapes;
 
+import interfaces.Shape;
+
 /**
  * Represents a geometric circle shape.
  * 
  * @author DorianBoel
  */
-public class Circle extends Shape {
+public class Circle implements Shape {
 
 	/**
 	 * The radius of the circle.

@@ -1,10 +1,9 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-
 import entities.shapes.Circle;
 import entities.shapes.Rectangle;
 import entities.shapes.Square;
+import utils.DisplayUtils;
 import utils.tp.part1.CircleFactory;
 import utils.tp.part1.ShapeUtils;
 
@@ -17,12 +16,12 @@ public class TpShapes {
 		Circle circle2 = CircleFactory.createCircle(42.83);
 			
 		// On affiche le périmètre de chaque cercle
-		display(circle1.getPerimeter());
-		display(circle2.getPerimeter());
+		DisplayUtils.display(circle1.getPerimeter());
+		DisplayUtils.display(circle2.getPerimeter());
 		
 		// On affiche la surface de chaque cercle
-		display(circle1.getSurface());
-		display(circle2.getSurface());
+		DisplayUtils.display(circle1.getSurface());
+		DisplayUtils.display(circle2.getSurface());
 		
 		// Instanciation d'un rectangle et d'un carré
 		Rectangle rectangle1 = new Rectangle(3, 7);

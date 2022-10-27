@@ -10,7 +10,7 @@ import static utils.GeneralUtils.formatCurrency;
 public class Employee extends Person {
 	
 	/**
-	 * The employee's monthly salary
+	 * The employee's monthly salary.
 	 */
 	double salary;
 

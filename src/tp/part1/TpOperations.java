@@ -1,9 +1,7 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayErr;
-
 import enums.ArithmeticOperationType;
+import utils.DisplayUtils;
 import utils.tp.part1.AverageCalculator;
 import utils.tp.part1.Operations;
 
@@ -16,9 +14,9 @@ public class TpOperations {
 	
 		for (ArithmeticOperationType op : ArithmeticOperationType.values()) {
 			try {
-				display(op.toString() + ": " + Operations.calculate(a, b, op));
+				DisplayUtils.display(op.toString() + ": " + Operations.calculate(a, b, op));
 			} catch (Exception err) {
-				displayErr(err);
+				DisplayUtils.displayErr(err);
 			}
 		}
 		
@@ -35,7 +33,7 @@ public class TpOperations {
 			// On fait passer le tableau dans la classe pour qu'il soit traité
 			averageCalculator.push(numArray);
 			// Affichage de la moyenne obtenue
-			display(averageCalculator.calculateAverage());
+			DisplayUtils.display(averageCalculator.calculateAverage());
 		}
 		
 	}

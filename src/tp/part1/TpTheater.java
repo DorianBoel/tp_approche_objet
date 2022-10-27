@@ -1,11 +1,10 @@
 package tp.part1;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayErr;
 import static utils.GeneralUtils.formatCurrency;
 import static utils.GeneralUtils.randomInt;
 
 import entities.general.Theater;
+import utils.DisplayUtils;
 
 public class TpTheater {
 
@@ -24,12 +23,12 @@ public class TpTheater {
 				theater1.displayRegistrationInfo();
 			}
 		} catch (Exception err) {
-			displayErr(err);
+			DisplayUtils.displayErr(err);
 		}
 
 		// On affiche le nombre total de clients inscrits puis la recette totale du théâtre suite aux inscriptions
-		display(theater1.getRegisteredCustomerCount());
-		display(formatCurrency(theater1.getIncome()));
+		DisplayUtils.display(theater1.getRegisteredCustomerCount());
+		DisplayUtils.display(formatCurrency(theater1.getIncome()));
 		
 	}
 

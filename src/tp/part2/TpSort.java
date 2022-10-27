@@ -1,13 +1,12 @@
 package tp.part2;
 
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import entities.geo.City;
+import utils.DisplayUtils;
 import utils.tp.part2.CityComparators;
 
 public class TpSort {
@@ -28,15 +27,15 @@ public class TpSort {
 		
 		// On trie la liste par ordre décroissant de population
 		Collections.sort(cities);
-		displayInCollection(cities);
+		DisplayUtils.displayInCollection(cities);
 		
 		// On trie ensuite la liste par ordre alphabétique de nom
 		Collections.sort(cities, CityComparators.NAME_COMPARATOR_ALPHABETICAL);
-		displayInCollection(cities);
+		DisplayUtils.displayInCollection(cities);
 		
 		// On trie à nouveau la liste par ordre croissant de population en utilisant un comparator
 		cities.sort(CityComparators.POPULATION_COMPARATOR_ASCENDING);
-		displayInCollection(cities);
+		DisplayUtils.displayInCollection(cities);
 
 	}
 	

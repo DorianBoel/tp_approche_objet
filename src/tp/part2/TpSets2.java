@@ -1,13 +1,11 @@
 package tp.part2;
 
-import static utils.GeneralUtils.display;
-import static utils.GeneralUtils.displayInCollection;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 import entities.geo.Country;
+import utils.DisplayUtils;
 
 public class TpSets2 {
 
@@ -35,7 +33,7 @@ public class TpSets2 {
 				maxGdpCapitaCountry = country;
 			}
 		}
-		display(maxGdpCapitaCountry);
+		DisplayUtils.display(maxGdpCapitaCountry);
 		
 		// On recherche le pays ayant le plus grand PIB
 		Country maxTotalGdpCountry = null;
@@ -46,7 +44,7 @@ public class TpSets2 {
 				maxTotalGdpCountry = country;
 			}
 		}
-		display(maxTotalGdpCountry);
+		DisplayUtils.display(maxTotalGdpCountry);
 		
 		// On met en majuscules le nom du pays ayant le plus petit PIB
 		Country minTotalGdpCountry = null;
@@ -58,13 +56,13 @@ public class TpSets2 {
 			}
 		}
 		minTotalGdpCountry.setName(minTotalGdpCountry.getName().toUpperCase());
-		display(minTotalGdpCountry);
+		DisplayUtils.display(minTotalGdpCountry);
 		
 		// On le supprime du set
 		countries.remove(minTotalGdpCountry);
 		
 		// Set final
-		displayInCollection(countries);
+		DisplayUtils.displayInCollection(countries);
 		
 	}
 	

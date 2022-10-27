@@ -1,24 +1,24 @@
-package entities.shapes;
+package interfaces;
 
 /**
- * Abstract class representing a geometric shape.
+ * Interface to be implemented by geometric shapes.
  * 
  * @author DorianBoel
  */
-public abstract class Shape {
+public interface Shape {
 
 	/**
 	 * Calculates this shape's perimeter.
 	 * 
 	 * @return This shape's perimeter
 	 */
-	public abstract double getPerimeter();
+	double getPerimeter();
 	
 	/**
 	 * Calculates this shape's surface.
 	 * 
 	 * @return This shape's surface
 	 */
-	public abstract double getSurface();
+	double getSurface();
 	
 }
